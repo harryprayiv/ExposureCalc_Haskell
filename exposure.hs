@@ -13,21 +13,22 @@ ev e = logBase e 2
 
 -- Define evCalc
 evCalc :: Double -> Double -> Double -> Double
-evCalc stop iso shutter = logBase 2((100*(pow(stop,2)))/(iso*shutter))
-
-evCalc :: Double -> Double -> Double -> Double
 evCalc iso shutter stop = logBase 2((stop)/(iso*shutter))
 
-
+--quick test of function
 ev = evCalc (stop 2.8) (iso 320.0) (shutter 48.0)
+
 -- Define stopCalc
 stopCalc :: Double -> Double -> Double -> Double
-stopCalc iso shutter ev = (sqrt(((exp2(ev))*(iso*shutter))/100)*100.0)/100.0
+stopCalc iso shutter ev = undefined
+--(sqrt(((exp2(ev))*(iso*shutter))/100)*100.0)/100.0
 
 -- Define isoCalc
 isoCalc :: Double -> Double -> Double -> Double
-isoCalc stop shutter ev = (100*((pow(stop, 2))) / (exp2(ev))/shutter)
+isoCalc stop shutter ev = undefined
+-- (100*((pow(stop, 2))) / (exp2(ev))/shutter)
 
 -- Define shutterCalc
 shutterCalc :: Double -> Double -> Double -> Double
-shutterCalc stop iso ev = (100*(pow(stop, 2)) / (exp2(ev)))/iso
+shutterCalc stop iso ev = undefined
+-- (100*(pow(stop, 2)) / (exp2(ev)))/iso
