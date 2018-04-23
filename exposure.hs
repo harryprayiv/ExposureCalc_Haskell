@@ -11,9 +11,5 @@ iso :: Double -> Double -> Double -> Double
 iso n e s = (100 * (n ** 2) / (2 ** e)/ s)
 
 -- Define shutterCalc
---shutter :: Double -> Double -> Double -> Double
---shutter n t = logBase 2 (100 * (n / ())))
-
-ev 6.531972647421807 100.0 (1/48)
-stop 11 100 (1/48)
-iso 6.531972647421807 11.0 (1/48)
+shutter :: Double -> Double -> Double -> Double
+shutter n i e = (100 * (n ** 2)) / (2 ** e) / i
