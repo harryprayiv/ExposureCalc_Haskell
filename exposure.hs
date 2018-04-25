@@ -1,15 +1,15 @@
--- Define evCalc
+-- Calculate EV from F-stop, ISO, and shutter speed
 ev :: Double -> Double -> Double -> Double
 ev n i s = logBase 2 (100 * ((n ** 2) / (i * s)))
 
--- Define stopCalc
+-- Calculate F-stop from EV, ISO, and shutter speed
 stop :: Double -> Double -> Double -> Double
-stop e i s = (sqrt (((2 ** e) * (i * s))/100) * 100.0)/100.0
+stop e i s = sqrt ((2 ** e) * (i * s)/100.0)
 
--- Define isoCalc
+-- Calculate ISO from EV, F-stop, and shutter speed
 iso :: Double -> Double -> Double -> Double
-iso n e s = 100 * (n ** 2) / (2 ** e)/ s
+iso n e s = 100 * (n ** 2) / (2 ** e) / s
 
--- Define shutterCalc
+-- Calculate shutter speed from EV, F-stop, and ISO
 shutter :: Double -> Double -> Double -> Double
 shutter n i e = (100 * (n ** 2)) / (2 ** e) / i
